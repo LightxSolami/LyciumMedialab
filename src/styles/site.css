@@ -398,8 +398,13 @@
     .community h2 { margin: 9px 0; font-size: clamp(28px, 4vw, 42px); font-weight: 400; }
     .community p { max-width: 670px; margin: 0 auto; color: #d8d1c5; font-size: 15px; }
     .community .status-line { margin-top: 18px; color: #f0d7a8; }
-    .site-footer { display: flex; justify-content: space-between; gap: 18px; padding: 20px clamp(20px, 4vw, 60px); background: var(--navy-deep); color: #d5c7b1; font: 10px/1.5 var(--sans); }
+    .site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; padding: 20px clamp(20px, 4vw, 60px); background: var(--navy-deep); color: #d5c7b1; font: 10px/1.5 var(--sans); }
     .site-footer a { text-decoration: underline; text-underline-offset: 3px; }
+    .social-links { display: flex; flex: 0 0 100%; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .social-links a, .social-link-pending { display: inline-flex; min-height: 38px; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid #d5bd8a55; color: #f0d7a8; font: 11px var(--sans); }
+    .social-links a:hover { background: #c5a16a1c; }
+    .social-links svg { width: 18px; height: 18px; fill: currentColor; }
+    .social-link-pending { opacity: .7; }
     .photo-credits { flex-basis: 100%; }
     .photo-credits summary { width: fit-content; color: #f0d7a8; cursor: pointer; }
     .photo-credit-list { display: flex; flex-wrap: wrap; gap: 9px 18px; padding: 12px 0 2px; }

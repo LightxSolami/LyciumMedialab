@@ -36,6 +36,7 @@ src/
   components/  Shared React shell and static-template view component
   content/     Editorial HTML fragments, separated by page
   data/        Typed editorial and presentation content
+               Social profile URLs in src/data/socialLinks.ts
   features/    Supabase client integration
   games/       J01-J06 interactive game modules and shared DOM helper
   legacy/      Existing route, publishing, and editorial-interaction runtime
