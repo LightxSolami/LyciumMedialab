@@ -1,0 +1,244 @@
+<section class="arcade-section" id="arcade" aria-labelledby="arcade-title">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">Le laboratoire ludique</div>
+            <h2 id="arcade-title">À vous de jouer.</h2>
+          </div>
+          <p>Ces prototypes jouables prolongent les œuvres, sans compte obligatoire. Ils restent des expériences de conception : leur présence ne signifie ni test utilisateur, ni validation scientifique exhaustive, ni engagement à tout livrer au N° 01. Le chatbot J02B demeure hors périmètre.</p>
+        </div>
+        <a class="game-back" id="game-back" href="#arcade">← Retour au menu des jeux</a>
+        <div class="game-menu" id="game-menu" aria-labelledby="arcade-title">
+          <p class="game-menu-intro">Choisissez une expérience pour ouvrir sa page dédiée. Chaque jeu s’affiche seul, avec un lien pour revenir à ce menu.</p>
+          <div class="game-menu-grid">
+            <article class="game-menu-card">
+              <span class="game-menu-code">J01 · Les Passages</span>
+              <h3>Les mots des frontières</h3>
+              <p>Complétez une grille de huit mots entre sens concret et métaphore.</p>
+              <a class="library-action" href="#arcade/j01-game">Jouer au jeu ↗</a>
+            </article>
+            <article class="game-menu-card">
+              <span class="game-menu-code">J02 · Les légendes de la science</span>
+              <h3>Le Cinquantième</h3>
+              <p>Explorez une mesure inspirée du récit d’Ératosthène et ses hypothèses.</p>
+              <a class="library-action" href="#arcade/j02-game">Jouer au jeu ↗</a>
+            </article>
+            <article class="game-menu-card">
+              <span class="game-menu-code">J03 · Les territoires du vivant</span>
+              <h3>L’Atlas vivant</h3>
+              <p>Façonnez un paysage et observez les effets des saisons et des aménagements.</p>
+              <a class="library-action" href="#arcade/j03-game">Jouer au jeu ↗</a>
+            </article>
+            <article class="game-menu-card">
+              <span class="game-menu-code">J04 · Les sens en mouvement</span>
+              <h3>Le laboratoire des correspondances</h3>
+              <p>Parcourez des stations de perception et comparez des impressions personnelles.</p>
+              <a class="library-action" href="#arcade/j04-game">Jouer au jeu ↗</a>
+            </article>
+            <article class="game-menu-card">
+              <span class="game-menu-code">J05 · Les systèmes invisibles</span>
+              <h3>Le Chantier vivant</h3>
+              <p>Récupérez des composants et assemblez un système fonctionnel.</p>
+              <a class="library-action" href="#arcade/j05-game">Jouer au jeu ↗</a>
+            </article>
+            <article class="game-menu-card">
+              <span class="game-menu-code">J06 · Le Contrechamp</span>
+              <h3>Le Temple des oracles</h3>
+              <p>Examinez des dossiers fictifs, leurs preuves, leurs limites et leurs crédits.</p>
+              <a class="library-action" href="#arcade/j06-game">Jouer au jeu ↗</a>
+            </article>
+          </div>
+        </div>
+        <h3 class="game-list-heading" id="published-games-heading" hidden>Jeux publiés</h3>
+        <div class="game-grid" id="game-grid" aria-live="polite" hidden>
+        </div>
+        <article class="pilot-game" id="j01-game" aria-labelledby="j01-title">
+          <div class="pilot-game-heading">
+            <div class="section-kicker">J01 · Les Passages · pilote jouable</div>
+            <h3 id="j01-title">Les mots des frontières</h3>
+            <p>Huit mots se croisent dans une grille. Chaque définition laisse hésiter entre une lecture concrète et une lecture métaphorique. Il n’y a ni chronomètre ni pénalité : explorez, vérifiez et changez d’avis. Jouable au clavier et sur mobile, sans compte.</p>
+            <div class="pilot-game-meta"><span>3–7 min · durée indicative</span><span>Sans compte · sauvegarde locale facultative</span></div>
+          </div>
+          <div class="wordgame-layout">
+            <div>
+              <p class="wordgame-instructions" id="j01-instructions">Choisissez une définition pour activer le mot, puis saisissez une lettre par case. Les flèches suivent le mot actif ; à un croisement, la flèche perpendiculaire change de mot. Les accents ne sont pas saisis dans la grille.</p>
+              <div class="crossword-grid" id="j01-grid" role="group" aria-label="Grille de mots fléchés, 19 lignes et 12 colonnes" aria-describedby="j01-instructions"></div>
+              <div class="wordgame-actions" aria-label="Actions de la partie">
+                <button type="button" id="j01-check">Vérifier la grille</button>
+                <button type="button" id="j01-hint">Révéler une lettre</button>
+                <button type="button" id="j01-print">Imprimer / enregistrer en PDF</button>
+                <button type="button" id="j01-reset">Recommencer</button>
+              </div>
+              <p class="wordgame-status" id="j01-status" role="status" aria-live="polite"></p>
+              <div class="wordgame-reveal" id="j01-reveal" hidden>
+                <h4>Une nuance à emporter</h4>
+                <p>Une frontière peut être une ligne sur une carte ou la limite mouvante d’un savoir. Relisez le texte-source : qu’est-ce qui fait frontière, et qui en décide ?</p>
+                <p><a class="library-action" href="#oeuvre">Revenir à l’œuvre-source ↗</a></p>
+              </div>
+            </div>
+            <div class="wordgame-clues" aria-label="Définitions">
+              <h4>Horizontales</h4>
+              <ol id="j01-across"></ol>
+              <h4>Verticales</h4>
+              <ol id="j01-down"></ol>
+            </div>
+          </div>
+        </article>
+        <div class="prototype-grid" aria-label="Cinq autres prototypes de jeu jouables">
+          <article class="prototype-game" id="j02-game" aria-labelledby="j02-title">
+            <header class="prototype-heading">
+              <div class="section-kicker">J02 · Les légendes de la science · enquête de mesure</div>
+              <h4 id="j02-title">Le Cinquantième</h4>
+              <p>Manipulez une mesure simplifiée inspirée du récit d’Ératosthène. La formule et ses hypothèses restent visibles : ce calcul ne tranche pas les incertitudes historiques.</p>
+            </header>
+            <div class="prototype-content">
+              <p class="prototype-copy">Dans ce modèle, on suppose que les rayons du Soleil sont parallèles et que les deux villes sont sur un même méridien. Ajustez l’angle et la distance d’arc retenue.</p>
+              <label>Angle mesuré : <output id="j02-angle-label" for="j02-angle">7,2°</output><input id="j02-angle" type="range" min="1" max="30" step="0.1" value="7.2"></label>
+              <label>Distance entre les villes (stades, valeur de démonstration)<input id="j02-distance" type="number" min="1" max="100000" step="100" value="5000"></label>
+              <svg class="signal-canvas" viewBox="0 0 320 140" role="img" aria-labelledby="j02-diagram-title j02-diagram-description">
+                <title id="j02-diagram-title">Gnomon et longueur d’ombre dans le modèle</title>
+                <desc id="j02-diagram-description">Schéma géométrique : une tige verticale, un rayon solaire oblique et l’ombre au sol. La proportion est calculée selon l’angle sélectionné.</desc>
+                <line x1="20" y1="112" x2="165" y2="112" stroke="#d7c58d" stroke-width="2"></line>
+                <line x1="70" y1="112" x2="70" y2="48" stroke="#f0ca80" stroke-width="5"></line>
+                <line id="j02-ray" x1="70" y1="48" x2="78" y2="112" stroke="#86cfd1" stroke-width="2"></line>
+                <line id="j02-shadow-line" x1="70" y1="116" x2="78" y2="116" stroke="#f0ca80" stroke-width="4"></line>
+                <path id="j02-angle-arc" d="M70 80 A32 32 0 0 1 74 80" fill="none" stroke="#d99168" stroke-width="2"></path>
+                <circle cx="238" cy="36" r="15" fill="#eac77d"></circle>
+                <text x="15" y="132" fill="#e5ddcf" font-size="10">gnomon</text>
+                <text x="94" y="130" fill="#e5ddcf" font-size="10">ombre / hauteur = tan(angle)</text>
+                <text x="220" y="65" fill="#e5ddcf" font-size="10">Soleil</text>
+              </svg>
+              <div class="prototype-output formula-output" aria-live="polite">
+                <div><strong>Tour estimé dans le modèle</strong><br><span id="j02-result" class="formula-value">250 000</span> stades</div>
+                <div><strong>Rapport d’un tour</strong><br><span id="j02-ratio" class="formula-value">1 / 50</span></div>
+                <div><strong>Ombre / hauteur du gnomon</strong><br><span id="j02-shadow" class="formula-value">0,126</span></div>
+                <div><strong>Formule</strong><br><span class="formula-value">360 × distance ÷ angle</span></div>
+              </div>
+              <p class="prototype-note">La tangente de l’angle au zénith est ici égale à ombre ÷ hauteur. 7,2° est une notation moderne de démonstration, pas une citation antique. Le stade, les distances, l’alignement et la simultanéité sont incertains.</p>
+              <div class="prototype-output"><strong>À distinguer</strong><p>Le calcul simplifié avec 5 000 stades donne 250 000 stades. Une tradition ultérieure rapporte aussi 252 000 ; ce nombre n’est pas le résultat de ce calcul.</p></div>
+              <p class="prototype-status" id="j02-status" role="status" aria-live="polite"></p>
+            </div>
+          </article>
+
+          <article class="prototype-game" id="j03-game" aria-labelledby="j03-title">
+            <header class="prototype-heading">
+              <div class="section-kicker">J03 · La vie des flux · simulation simplifiée</div>
+              <h4 id="j03-title">L’Atlas vivant</h4>
+              <p>Aménagez une vallée aux deux rives. Les règles sont déterministes et lisibles : ce petit modèle n’est ni une prévision hydrologique, ni une économie réelle.</p>
+            </header>
+            <div class="prototype-content">
+              <div class="layer-controls" aria-label="Couches cartographiques">
+                <label><input type="checkbox" data-j03-layer="terrain" checked> Relief</label>
+                <label><input type="checkbox" data-j03-layer="water" checked> Eau</label>
+                <label><input type="checkbox" data-j03-layer="paths" checked> Circulations</label>
+                <label><input type="checkbox" data-j03-layer="land" checked> Usages du sol</label>
+              </div>
+              <div id="j03-map" class="valley-map" role="group" aria-label="Carte interactive de la vallée"></div>
+              <div class="valley-legend" aria-label="Légende"><span>〰 rivière</span><span>⌂ communauté</span><span>◆ marché</span><span>▧ relief</span><span>Les bordures montrent les aménagements.</span></div>
+              <div class="prototype-controls">
+                <label>Aménagement à placer<select id="j03-build"><option value="canal">Petit canal (eau)</option><option value="road">Passage (circulation)</option><option value="field">Parcelle cultivée (sol)</option><option value="reserve">Réserve (eau en saison sèche)</option></select></label>
+                <button class="tile-button" id="j03-build-button" type="button">Placer sur la case choisie</button>
+                <button class="tile-button" id="j03-season" type="button">Faire avancer la saison</button>
+              </div>
+              <p class="prototype-copy" id="j03-selection">Choisissez une case de la vallée pour l’inspecter.</p>
+              <div class="prototype-output" id="j03-readout" aria-live="polite"></div>
+              <p class="prototype-status" id="j03-status" role="status" aria-live="polite">Départ · printemps, conditions ordinaires. Les résultats suivent les mêmes règles à chaque partie.</p>
+              <p class="prototype-note">Règles de démonstration : les canaux doivent toucher la rivière, et les parcelles doivent toucher un canal alimenté ; les passages doivent former un chemin continu entre le marché et une communauté. Un pont sur la rivière est fermé en crue ; une réserve ajoute de l’eau au seul modèle de saison sèche. Une bordure est un aménagement, pas une donnée géographique.</p>
+            </div>
+          </article>
+
+          <article class="prototype-game" id="j04-game" aria-labelledby="j04-title">
+            <header class="prototype-heading">
+              <div class="section-kicker">J04 · Formes et imaginaires · exploration audiovisuelle</div>
+              <h4 id="j04-title">Le laboratoire des correspondances</h4>
+              <p>Trois stations séparent visualisation du signal, association personnelle et ambiance. Vos impressions ne sont pas notées comme vraies ou fausses.</p>
+            </header>
+            <div class="prototype-content">
+              <div class="station-tabs" role="group" aria-label="Choisir une station">
+                <button type="button" data-j04-station="plate" aria-pressed="true">A · La plaque</button>
+                <button type="button" data-j04-station="perception" aria-pressed="false">B · La perception</button>
+                <button type="button" data-j04-station="scene" aria-pressed="false">C · La scène</button>
+              </div>
+              <section class="station-panel" id="j04-plate">
+                <p class="prototype-copy">Écoutez une tonalité originale déclenchée uniquement à votre demande. Le tracé est une visualisation abstraite du signal, pas une figure nodale ni une figure de Chladni.</p>
+                <label>Fréquence de la tonalité : <output id="j04-frequency-label" for="j04-frequency">220 Hz</output><input id="j04-frequency" type="range" min="110" max="440" step="1" value="220"></label>
+                <canvas class="signal-canvas" id="j04-signal" width="640" height="160" role="img" aria-label="Visualisation abstraite d’une onde sonore"></canvas>
+                <div class="prototype-actions"><button type="button" id="j04-play">Jouer une tonalité</button></div>
+                <p class="prototype-status" id="j04-sound-status" role="status" aria-live="polite">Aucun son ne démarre sans action.</p>
+              </section>
+              <section class="station-panel" id="j04-perception" hidden>
+                <p class="prototype-copy">Imaginez la forme associée à ce rythme visuel. Choisissez une association, ou décrivez-en une : il n’existe pas de réponse correcte.</p>
+                <div class="scene-swatch" role="img" aria-label="Cercles concentriques, dessin original de l’expérience">Une vibration imaginée</div>
+                <div class="choice-row" role="group" aria-label="Votre association">
+                  <button class="choice-button" type="button" data-j04-association="angles">Angles</button>
+                  <button class="choice-button" type="button" data-j04-association="vagues">Vagues</button>
+                  <button class="choice-button" type="button" data-j04-association="points">Points</button>
+                  <button class="choice-button" type="button" data-j04-association="autre">Autre</button>
+                </div>
+                <label>Votre idée (facultatif, conservée uniquement dans cette page)<input id="j04-note" type="text" maxlength="160" placeholder="Une forme, une sensation, un souvenir…"></label>
+                <p class="prototype-status" id="j04-perception-status" role="status" aria-live="polite">Votre réponse n’est pas envoyée ni publiée.</p>
+              </section>
+              <section class="station-panel" id="j04-scene" hidden>
+                <p class="prototype-copy">Même image abstraite, deux accompagnements synthétiques très simples. Notez comment l’ambiance perçue change, si elle change.</p>
+                <div class="scene-swatch" role="img" aria-label="Une scène abstraite originale, inchangée d’un accompagnement à l’autre">Même scène, deux accompagnements</div>
+                <div class="prototype-actions"><button type="button" data-j04-scene="calm">Écouter l’accompagnement A</button><button type="button" data-j04-scene="tense">Écouter l’accompagnement B</button><button type="button" id="j04-stop">Arrêter le son</button></div>
+                <div class="choice-row" role="group" aria-label="Ambiance ressentie"><button class="choice-button" type="button" data-j04-mood="calm">Apaisante</button><button class="choice-button" type="button" data-j04-mood="tense">Tendue</button><button class="choice-button" type="button" data-j04-mood="other">Autre / pareil</button></div>
+                <p class="prototype-status" id="j04-scene-status" role="status" aria-live="polite">L’impression est personnelle ; aucune ambiance n’est universelle.</p>
+              </section>
+              <p class="prototype-note">Le son est original, généré localement, sans autoplay. Aucun son n’est requis pour comprendre ni compléter les stations. Fréquence sonore et longueur d’onde lumineuse ne sont pas équivalentes.</p>
+            </div>
+          </article>
+
+          <article class="prototype-game" id="j05-game" aria-labelledby="j05-title">
+            <header class="prototype-heading">
+              <div class="section-kicker">J05 · Du savoir au faire · mission de plateforme et systèmes</div>
+              <h4 id="j05-title">Le Chantier vivant</h4>
+              <p>Explorez une exploitation stylisée, trouvez les pièces et reliez eau, énergie et mesure. La mission ne se valide que si les compatibilités fonctionnelles sont réunies.</p>
+            </header>
+            <div class="prototype-content">
+              <p class="prototype-copy" id="j05-instructions">Déplacement : flèches ou A/D ; saut : Espace ou ↑ ; interaction : E. Sur téléphone, maintenez les boutons tactiles. Rejoignez les ateliers pour récupérer une pièce.</p>
+              <canvas class="systems-canvas" id="j05-canvas" width="720" height="280" role="img" aria-label="Jeu de plateforme stylisé avec personnage, ateliers et objets à récupérer" aria-describedby="j05-instructions"></canvas>
+              <div class="touch-controls" aria-label="Contrôles tactiles"><button type="button" data-j05-control="left" aria-label="Aller à gauche">←</button><button type="button" data-j05-control="right" aria-label="Aller à droite">→</button><button type="button" data-j05-control="jump" aria-label="Sauter">Sauter</button><button type="button" id="j05-interact">Interagir</button></div>
+              <p class="prototype-note">Alternative sans déplacement : récupérez les mêmes pièces avec ces commandes, puis résolvez les chaînes normalement.</p>
+              <div class="prototype-actions" aria-label="Récupérer une pièce sans plateforme">
+                <button type="button" data-j05-part="pipe">Récupérer le tuyau</button>
+                <button type="button" data-j05-part="sensor">Récupérer le capteur</button>
+                <button type="button" data-j05-part="gateway">Récupérer la passerelle</button>
+              </div>
+              <div class="prototype-output" id="j05-inventory" aria-live="polite"></div>
+              <div class="system-options">
+                <label>Alimentation de la pompe<select id="j05-power"><option value="panel">Panneau solaire</option><option value="battery">Batterie basse tension</option></select></label>
+                <label>Raccordement hydraulique<select id="j05-water"><option value="pump-hose">Pompe + tuyau au réservoir</option><option value="gravity">Réservoir en gravité + conduite</option><option value="loose">Tuyau non raccordé</option></select></label>
+                <label>Chaîne de mesure<select id="j05-data"><option value="sensor-gateway">Capteur + passerelle + serveur</option><option value="sensor-only">Capteur sans passerelle</option></select></label>
+              </div>
+              <div class="prototype-actions"><button type="button" id="j05-test">Tester le système</button><button type="button" id="j05-reset">Recommencer la mission</button></div>
+              <p class="prototype-status" id="j05-status" role="status" aria-live="polite">Récupérez les trois pièces dans le niveau avant de lancer un test.</p>
+              <p class="prototype-note">Mission fictive et simplifiée. Le choix « gravité » et les composants représentent des relations fonctionnelles de jeu, pas une prescription pour une installation réelle.</p>
+            </div>
+          </article>
+
+          <article class="prototype-game" id="j06-game" aria-labelledby="j06-title">
+            <header class="prototype-heading">
+              <div class="section-kicker">J06 · Le Contrechamp · dossiers entièrement fictifs</div>
+              <h4 id="j06-title">Le Temple des oracles</h4>
+              <p>Quatre mini-enquêtes invitent à demander une preuve, examiner les contributions et préciser ce qui manque. Ni le prestige ni le soupçon systématique ne font office de verdict.</p>
+            </header>
+            <div class="prototype-content">
+              <div class="case-tabs" id="j06-tabs" role="group" aria-label="Choisir un dossier fictif"></div>
+              <div class="prototype-output" id="j06-claim" aria-live="polite"></div>
+              <div class="prototype-controls"><button class="evidence-button" type="button" data-j06-request="proof" aria-pressed="false">Quelle preuve ?</button><button class="evidence-button" type="button" data-j06-request="credits" aria-pressed="false">Qui a fait quoi ?</button><button class="evidence-button" type="button" data-j06-request="limits" aria-pressed="false">Que manque-t-il ?</button></div>
+              <div class="evidence-list" id="j06-evidence" aria-live="polite"><p class="prototype-copy">Demandez à consulter les pièces du dossier.</p></div>
+              <fieldset style="border:1px solid #d5bd8a45;padding:12px">
+                <legend style="color:#f1d8a8;font:700 11px var(--sans)">Votre conclusion</legend>
+                <label>Quel niveau de confiance les pièces autorisent-elles ?
+                  <select id="j06-confidence"><option value="">Choisir une conclusion</option><option value="none">Aucune conclusion pour l’instant</option><option value="limited">Conclusion limitée au protocole</option><option value="moderate">Indice prometteur, à confirmer</option><option value="strong">Résultat robuste dans ce dossier</option><option value="dismiss">La revendication est forcément fausse</option></select>
+                </label>
+              </fieldset>
+              <div><h5 style="margin:0 0 8px;color:#f1d8a8;font:700 11px var(--sans)">Crédits des contributions</h5><div class="credit-list" id="j06-credits"></div></div>
+              <div class="prototype-actions"><button type="button" id="j06-submit">Présenter ma conclusion</button></div>
+              <p class="prototype-status" id="j06-status" role="status" aria-live="polite">Toutes les personnes, institutions et recherches décrites ici sont fictives.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>

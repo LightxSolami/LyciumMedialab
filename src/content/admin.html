@@ -1,0 +1,122 @@
+<section class="admin-console" aria-label="Configuration de la médiathèque">
+      <details>
+        <summary>Configuration & accès éditeur</summary>
+        <div class="admin-content">
+          <p>Connectez le projet Supabase de votre magazine. Seule la clé publique « anon » / « publishable » est utilisée ici. Ne collez jamais une clé <code>service_role</code> dans une page web.</p>
+          <ol class="setup-steps">
+            <li>Créez un projet Supabase et exécutez le fichier <code>supabase-setup.sql</code> dans le SQL Editor.</li>
+            <li>Ce site est préconfiguré avec l’URL et la clé publishable/anon de son projet. Pour utiliser un autre projet, copiez ses valeurs ici puis enregistrez-les.</li>
+            <li>Créez les comptes éditeurs, attribuez-leur le rôle <code>editor</code> dans <code>app_metadata</code> côté serveur, puis faites-les reconnecter. L’accès éditeur ne peut pas être auto-attribué par cette page.</li>
+            <li>Déployez cette page en HTTPS et autorisez son domaine dans les URL de redirection Supabase pour l’accès par lien e-mail.</li>
+          </ol>
+          <div class="admin-grid">
+            <section class="admin-card" aria-labelledby="connection-title">
+              <h3 id="connection-title">Connexion du projet</h3>
+              <form class="admin-form" id="config-form">
+                <label for="project-url">URL du projet Supabase
+                  <input id="project-url" name="projectUrl" type="url" placeholder="https://votre-projet.supabase.co" autocomplete="url" required>
+                </label>
+                <label for="public-key">Clé publique anon / publishable
+                  <input id="public-key" name="publicKey" type="password" placeholder="sb_publishable_… ou clé anon" autocomplete="off" required>
+                </label>
+                <div class="admin-actions">
+                  <button type="submit" id="connect-button">Enregistrer & connecter</button>
+                  <button type="button" class="button-quiet" id="disconnect-button">Déconnecter</button>
+                </div>
+              </form>
+              <p class="admin-message" id="database-status" role="status">Base de données non connectée.</p>
+            </section>
+            <section class="admin-card" aria-labelledby="editor-title">
+              <h3 id="editor-title">Connexion éditeur</h3>
+              <form class="admin-form" id="login-form">
+                <label for="editor-email">Adresse e-mail d’un compte éditeur
+                  <input id="editor-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required>
+                </label>
+                <button type="submit" id="login-button">M’envoyer un lien sécurisé</button>
+              </form>
+              <div class="admin-actions">
+                <button class="library-action" type="button" id="logout-button" hidden>Se déconnecter</button>
+              </div>
+              <p class="admin-message" id="auth-status" role="status">Les éditeurs se connectent par lien e-mail.</p>
+            </section>
+          </div>
+          <div class="editor-tools" id="editor-tools" hidden>
+            <p>Connecté avec les permissions éditeur. Les contenus publiés sont visibles par tous les visiteurs.</p>
+            <div class="admin-grid">
+              <section class="admin-card" aria-labelledby="add-video-title">
+                <h3 id="add-video-title">Publier une vidéo</h3>
+                <form class="admin-form" id="video-form">
+                  <label for="video-title-input">Titre
+                    <input id="video-title-input" name="title" maxlength="160" required>
+                  </label>
+                  <label for="video-description-input">Description
+                    <textarea id="video-description-input" name="description" maxlength="3000"></textarea>
+                  </label>
+                  <label for="video-rubric">Rubrique associée
+                    <select id="video-rubric" name="rubricSlug" class="rubric-options"></select>
+                  </label>
+                  <label for="video-source">Source
+                    <select id="video-source" name="sourceType">
+                      <option value="link">Lien YouTube, Vimeo ou vidéo HTTPS</option>
+                      <option value="upload">Importer un fichier vidéo (100 Mo maximum)</option>
+                    </select>
+                  </label>
+                  <label id="video-url-label" for="video-url">URL de la vidéo
+                    <input id="video-url" name="videoUrl" type="url" placeholder="https://…" required>
+                  </label>
+                  <label id="video-file-label" for="video-file" hidden>Fichier vidéo
+                    <input id="video-file" name="videoFile" type="file" accept="video/mp4,video/webm,video/ogg,video/quicktime">
+                    <small>Formats MP4, WebM, Ogg ou MOV. Pour les fichiers plus lourds, partagez un lien hébergé.</small>
+                  </label>
+                  <label for="video-thumbnail">Affiche HTTPS (facultatif)
+                    <input id="video-thumbnail" name="thumbnailUrl" type="url" placeholder="https://…">
+                  </label>
+                  <label for="video-credits">Crédits / mention des droits
+                    <input id="video-credits" name="credits" maxlength="300" placeholder="Réalisation, source, autorisation…" required>
+                  </label>
+                  <label class="check-label" for="video-rights">
+                    <input id="video-rights" name="rightsVerified" type="checkbox" required>
+                    <span>Je confirme avoir les droits nécessaires pour publier cette vidéo et son affiche. Les fichiers partagés sont publics.</span>
+                  </label>
+                  <small>Ne téléversez aucune vidéo privée ou sans autorisation.</small>
+                  <button type="submit" id="publish-video-button">Publier la vidéo</button>
+                </form>
+                <p class="admin-message" id="video-message" role="status"></p>
+              </section>
+              <section class="admin-card" aria-labelledby="add-game-title">
+                <h3 id="add-game-title">Ajouter un jeu</h3>
+                <form class="admin-form" id="game-form">
+                  <label for="game-title-input">Titre
+                    <input id="game-title-input" name="title" maxlength="160" required>
+                  </label>
+                  <label for="game-description-input">Description
+                    <textarea id="game-description-input" name="description" maxlength="3000"></textarea>
+                  </label>
+                  <label for="game-rubric">Rubrique associée
+                    <select id="game-rubric" name="rubricSlug" class="rubric-options"></select>
+                  </label>
+                  <label for="game-url">URL HTTPS du jeu
+                    <input id="game-url" name="gameUrl" type="url" placeholder="https://…" required>
+                  </label>
+                  <label for="game-cover">Image de couverture HTTPS (facultatif)
+                    <input id="game-cover" name="coverUrl" type="url" placeholder="https://…">
+                  </label>
+                  <label for="game-mode">Ouverture
+                    <select id="game-mode" name="launchMode">
+                      <option value="embed">Jouer dans la page (jeu configuré pour iframe)</option>
+                      <option value="link">Ouvrir sur le site du jeu</option>
+                    </select>
+                  </label>
+                  <label class="check-label" for="game-rights">
+                    <input id="game-rights" name="rightsVerified" type="checkbox" required>
+                    <span>Je confirme que ce jeu peut être publié et, si nécessaire, intégré dans une iframe.</span>
+                  </label>
+                  <button type="submit" id="publish-game-button">Publier le jeu</button>
+                </form>
+                <p class="admin-message" id="game-message" role="status"></p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </details>
+    </section>
