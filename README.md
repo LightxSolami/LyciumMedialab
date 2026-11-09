@@ -18,6 +18,7 @@ npm run dev
 Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` in `.env.local` to configure the public media library. These values are included in the browser bundle: only use a publishable/anon key. Never put a Supabase secret or service-role key in frontend environment variables.
 
 Run `supabase-setup.sql` in the Supabase SQL Editor to create the catalog tables, policies, and video bucket.
+Editor sign-in is available at `#login` and uses Supabase email magic links. Configure that deployed origin in the Supabase Auth redirect URL allow list; grant editor access only through `app_metadata.role = "editor"` on the server.
 
 ## Build and preview
 

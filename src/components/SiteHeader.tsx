@@ -18,6 +18,7 @@ export function SiteHeader() {
         <a href="#oeuvre">Œuvre pilote</a>
         <a href="#videos">Vidéos</a>
         <a href="#arcade">Jeux</a>
+        <a href="#login">Éditeurs</a>
         <a href="#communaute">Communauté</a>
       </nav>
     </header>

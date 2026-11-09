@@ -114,6 +114,7 @@ export function initializeLegacyApp(publicProjectConfig) {
         let view = "magazine";
         if (route === "videos") view = "videos";
         else if (route === "arcade") view = "arcade";
+        else if (route === "login") view = "login";
         else if (rubric) view = "presentation";
         document.body.dataset.view = view;
         if (view === "arcade" && localGames.has(destination)) {
@@ -124,12 +125,14 @@ export function initializeLegacyApp(publicProjectConfig) {
 
         const activeHref = view === "videos" ? "#videos"
           : view === "arcade" ? "#arcade"
-            : view === "presentation" ? "#sommaire" : "#couverture";
+            : view === "login" ? "#login"
+              : view === "presentation" ? "#sommaire" : "#couverture";
         menu.querySelectorAll("a").forEach((link) => {
           if (link.getAttribute("href") === activeHref) link.setAttribute("aria-current", "page");
           else link.removeAttribute("aria-current");
         });
         if (view === "presentation") renderPresentation(rubric);
+        else if (view === "login") document.title = "Connexion éditeur · Lycium MediaLab";
         else if (view === "arcade" && document.body.dataset.arcadeGame) {
           const title = byId(`${document.body.dataset.arcadeGame.replace("-game", "")}-title`);
           document.title = `${title?.textContent || "Jeu"} — Arcade · Lycium MediaLab`;

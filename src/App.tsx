@@ -6,6 +6,7 @@ import AdminPage from "./pages/AdminPage";
 import ArcadePage from "./pages/ArcadePage";
 import CommunityPage from "./pages/CommunityPage";
 import MagazinePage from "./pages/MagazinePage";
+import LoginPage from "./pages/LoginPage";
 import PresentationPage from "./pages/PresentationPage";
 import VideosPage from "./pages/VideosPage";
 import "./styles/site.css";
@@ -41,6 +42,7 @@ export default function App() {
         <VideosPage />
         <ArcadePage />
         <PresentationPage />
+        <LoginPage />
         <AdminPage />
         <CommunityPage />
       </main>

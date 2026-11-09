@@ -6,7 +6,7 @@
           <ol class="setup-steps">
             <li>Créez un projet Supabase et exécutez le fichier <code>supabase-setup.sql</code> dans le SQL Editor.</li>
             <li>Ce site est préconfiguré avec l’URL et la clé publishable/anon de son projet. Pour utiliser un autre projet, copiez ses valeurs ici puis enregistrez-les.</li>
-            <li>Créez les comptes éditeurs, attribuez-leur le rôle <code>editor</code> dans <code>app_metadata</code> côté serveur, puis faites-les reconnecter. L’accès éditeur ne peut pas être auto-attribué par cette page.</li>
+            <li>Créez les comptes éditeurs, attribuez-leur le rôle <code>editor</code> dans <code>app_metadata</code> côté serveur, puis faites-les reconnecter depuis la page <a href="#login">Connexion éditeur</a>. L’accès éditeur ne peut pas être auto-attribué par cette page.</li>
             <li>Déployez cette page en HTTPS et autorisez son domaine dans les URL de redirection Supabase pour l’accès par lien e-mail.</li>
           </ol>
           <div class="admin-grid">
@@ -26,18 +26,10 @@
               </form>
               <p class="admin-message" id="database-status" role="status">Base de données non connectée.</p>
             </section>
-            <section class="admin-card" aria-labelledby="editor-title">
-              <h3 id="editor-title">Connexion éditeur</h3>
-              <form class="admin-form" id="login-form">
-                <label for="editor-email">Adresse e-mail d’un compte éditeur
-                  <input id="editor-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" required>
-                </label>
-                <button type="submit" id="login-button">M’envoyer un lien sécurisé</button>
-              </form>
-              <div class="admin-actions">
-                <button class="library-action" type="button" id="logout-button" hidden>Se déconnecter</button>
-              </div>
-              <p class="admin-message" id="auth-status" role="status">Les éditeurs se connectent par lien e-mail.</p>
+            <section class="admin-card editor-login-card" aria-labelledby="editor-title">
+              <h3 id="editor-title">Espace éditeur</h3>
+              <p>La connexion et la gestion de session disposent maintenant d’une page dédiée.</p>
+              <a class="library-action" href="#login">Ouvrir la connexion éditeur ↗</a>
             </section>
           </div>
           <div class="editor-tools" id="editor-tools" hidden>

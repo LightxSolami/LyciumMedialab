@@ -310,11 +310,34 @@
     body[data-view="arcade"] main > :not([data-app-page="arcade"]),
     body[data-view="arcade"] .admin-console,
     body[data-view="presentation"] main > :not([data-app-page="presentation"]),
+    body[data-view="login"] main > :not([data-app-page="login"]),
     body[data-view="magazine"] .admin-console,
     body[data-view="presentation"] .admin-console { display: none !important; }
     body[data-view="videos"] #videos,
     body[data-view="arcade"] #arcade,
     body[data-view="presentation"] #presentation-view { display: block !important; }
+    body[data-view="login"] #root {
+      display: flex;
+      min-height: 100vh;
+      min-height: 100svh;
+      flex-direction: column;
+      background: radial-gradient(ellipse at 50% 20%, #193c49 0, #071b28 52%, #04131d 100%);
+    }
+    body[data-view="login"] main { display: flex; flex: 1 0 auto; flex-direction: column; }
+    body[data-view="login"] .site-footer { margin-top: auto; }
+    body[data-view="login"] .admin-console { display: none !important; }
+    .login-page { display: flex; flex: 1; align-items: center; justify-content: center; padding: 48px 20px; color: var(--paper-light); }
+    .login-content { width: min(100%, 520px); }
+    .login-back { display: inline-flex; min-height: 42px; align-items: center; margin-bottom: 16px; color: var(--gold-light); font: 700 12px var(--sans); text-decoration: underline; text-underline-offset: 4px; }
+    .login-card { padding: clamp(22px, 5vw, 40px); border: 1px solid #d5bd8a75; background: #071b28e8; box-shadow: 0 18px 55px #0004; }
+    .login-card .section-kicker { color: var(--gold-light); }
+    .login-card h1 { margin: 8px 0 10px; color: #fff5e3; font-size: clamp(30px, 6vw, 42px); font-weight: 400; line-height: 1.15; }
+    .login-card > p:not(.admin-message) { margin: 0 0 22px; color: #d1c9bd; font: 13px/1.7 var(--sans); }
+    .login-card .admin-form button { min-height: 44px; }
+    .login-session { margin-top: 8px; }
+    .login-session .library-action { margin-top: 0; }
+    .login-card .admin-message { min-height: 1.6em; margin: 14px 0 0; }
+    .login-admin-link { display: inline-block; margin-top: 20px; color: var(--gold-light); font: 700 11px var(--sans); text-decoration: underline; text-underline-offset: 4px; }
     body[data-view="videos"] #root,
     body[data-view="arcade"] #root {
       display: flex;
